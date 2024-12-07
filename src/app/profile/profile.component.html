@@ -1,0 +1,9 @@
+<h2>User Profile</h2>
+<div>
+  <label>First Name:</label>
+  <span *ngIf="!editMode">{{ userData.firstName }}</span>
+  <input *ngIf="editMode" [(ngModel)]="userData.firstName" />
+</div>
+<!-- Add similar fields for age, address, etc. -->
+<button (click)="onEdit()">Edit Profile</button>
+<button (click)="onSave()" *ngIf="editMode">Save</button>

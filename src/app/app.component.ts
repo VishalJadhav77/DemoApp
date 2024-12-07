@@ -1,13 +1,27 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RegisterComponent } from './register/register.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    RouterModule,
+    MatDialogModule,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'DemoApp';
+  title = 'demo-app';
+  constructor(private dialog: MatDialog) {}
+
+  openRegister(): void {
+    this.dialog.open(RegisterComponent, {
+      width: '600px',
+      height: 'auto',
+    });
+  }
 }

@@ -1,0 +1,15 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "age": 25,
+        "interests": ["Reading", "Traveling"],
+        "addressType": "home",
+        "address1": "123 Main Street",
+        "address2": "Apt 4B"
+      }
+    ]
+  }
+  

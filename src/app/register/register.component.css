@@ -1,0 +1,101 @@
+/* Center the modal form in the middle of the screen */
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Styling for the form */
+.registration-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form input styling */
+.registration-form input,
+.registration-form select,
+.registration-form mat-slider {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Label styling */
+.registration-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Error message styling */
+.registration-form .error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Chip list styling */
+.registration-form mat-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.registration-form mat-chip {
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 16px;
+}
+
+.registration-form mat-chip button {
+  background: none;
+  border: none;
+  color: #e91e63;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* File input styling */
+.registration-form input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Button styling */
+.registration-form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+  background-color: #3700b3;
+}
+
+/* Responsiveness for mobile */
+@media (max-width: 600px) {
+  .registration-form {
+    width: 90%;
+    padding: 20px;
+  }
+}

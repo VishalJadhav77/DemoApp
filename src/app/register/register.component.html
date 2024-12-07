@@ -1,0 +1,65 @@
+<h2>Registration Form</h2>
+<div class="modal-container">
+    
+    <form class="registration-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>First Name:</label>
+    <input matInput formControlName="firstName" />
+    <div *ngIf="registrationForm.get('firstName')?.invalid">
+      Invalid First Name. Only alphabets allowed, max length: 20.
+    </div>
+  </div>
+
+  <div>
+    <label>Age:</label>
+    <mat-slider min="18" max="60" step="1" formControlName="age"></mat-slider>
+  </div>
+
+  <div>
+    <label>Address Type:</label>
+    <select formControlName="addressType">
+      <option value="Home">Home</option>
+      <option value="Company">Company</option>
+    </select>
+  </div>
+
+  <div *ngIf="registrationForm.get('addressType')?.value === 'Home'">
+    <label>Address 1:</label>
+    <input matInput formControlName="address1" />
+    <label>Address 2:</label>
+    <input matInput formControlName="address2" />
+  </div>
+
+  <div *ngIf="registrationForm.get('addressType')?.value === 'Company'">
+    <label>Company Address 1:</label>
+    <input matInput formControlName="address1" />
+    <label>Company Address 2:</label>
+    <input matInput formControlName="address2" />
+  </div>
+
+  <div>
+    <label>Interests:</label>
+    
+      <mat-chip *ngFor="let interest of interests" (removed)="onRemoveInterest(interest)">
+        {{ interest }}
+        <button matChipRemove>Remove</button>
+      </mat-chip>
+    
+    <input 
+  matInput 
+  (keyup.enter)="onAddInterest($event)" 
+  formControlName="interests" 
+/>
+
+   </div>
+
+  <div>
+    <label>Photo:</label>
+    <input 
+    type="file" 
+    (change)="onFileSelect($event)" 
+  />
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
